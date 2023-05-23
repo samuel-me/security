@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+		<title> hello </title>
+		<style>
+			body,html {
+				height: 100%;
+				margin: 0%;
+			}
+
+			.split-screen .column.left {
+				flex:1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			} 
+
+			.split-screen .column.right {
+				flex: 1;
+				padding: 20px;
+
+			}
+		</style>
+</head>
+<body>
+	<h1> web</h1>
+	<div class="split-screen">
+		<div class="column left">
+			<img src="{{url_for('video')}}">
+			
+		</div>
+		<div class="column right">
+			<h2>Dataframe</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Sign_in</th>
+						<th>Sign_Out</th>
+						<th>Day</th>
+						<th>Month</th>
+						<th>seconds_spent</th>
+						<th>Minutes_spent</th>
+						<th>Hours_spent</th>
+					</tr>
+				</thead>
+				<body>
+					{% for index, row in dataframe.iterrows() %}
+						<tr>
+							<td>{{ row['Name']}}</td>
+							<td>{{ row['Sign_in']}}</td>
+							<td>{{ row['Sign_Out']}}</td>
+							<td>{{ row['Day']}}</td>
+							<td>{{ row['Month']}}</td>
+							<td>{{ row['seconds_spent']}}</td>
+							<td>{{ row['Minutes_spent']}}</td>
+							<td>{{ row['Hours_spent']}}</td>
+						</tr>
+					{% endfor %}
+
+				</body>
+			</table>
+
+			
+		</div>
+		
+	</div>
+</body>
+</html>

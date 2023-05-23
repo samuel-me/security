@@ -1,0 +1,12 @@
+
+<h2>Please enter the picture </h2>
+<form  method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+
+   
+    {{ form.y.label }} {{form.y}}
+     <br>
+    {{ form.submit() }}
+    
+</form>
