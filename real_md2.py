@@ -246,4 +246,4 @@ def table():
     return render_template("table.html",tables = [data.to_html()],titles = [""])
 
 if __name__ == '__main__':
-    app.run(debug= True)
+    app.run(debug= False, host = '0.0.0.0')
